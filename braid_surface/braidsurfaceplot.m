@@ -22,6 +22,9 @@ function braidsurfaceplot(braid_ind,dif)
 %
 % Copyright End
 % -----------------------------------------------------------------
+% Function to produce the braid surface plot of a chosen connectome graph;
+% INPUT  : braid_ind, ordered indexes of Braak regions; dif, defined dif range;
+% OUTPUT : Plot of braid surface;
 
 nd = length(dif);
 

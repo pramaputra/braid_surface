@@ -22,6 +22,11 @@ function [L,u0,n] = connectomelaplacian(csize,csource,cweight)
 %
 % Copyright End
 % -----------------------------------------------------------------
+% This function will generate the Laplacian matrix of a chosen connectome
+% graph and automatically generate homogeneous initial condition at the entorhinal
+% nodes with total initial concentration 5e-3, and zero elsewhere;
+% INPUT  : csize, connectome size; csource, connectome source; cweight, connectome weight;
+% OUTPUT : L, Laplacian matrix; u0, initial value vector; n, size of graph;
 
 switch csize(1)
     case 500
