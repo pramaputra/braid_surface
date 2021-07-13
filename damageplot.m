@@ -22,6 +22,16 @@ function damageplot(L,u0,n,TIME,dam,dif)
 %
 % Copyright End
 % -----------------------------------------------------------------
+% This function will produce a plot of Braak regions damage evolution; 
+% User will need to define a new end time if the plot shows unfinished
+% evolution process; The braid surface needs the full evolution process
+% since it gives arrival time computation between 1% and 99% thresholds;
+% The user needs to justify whether the smallest diffusion coefficient has
+% given finished evolution process within the defined TIME range; 
+% INPUT  : L, Laplacian matrix; u0, initial value vector; n, size of graph; 
+%          TIME, a range of time; dam, defined damage coefficient; 
+%          dif, defined dif coefficient;
+% OUTPUT : Plot of Braak regions' damage evolution;
 
 cf = pwd;
 datreg = readmatrix([cf,'\brainregion.xlsx'],...

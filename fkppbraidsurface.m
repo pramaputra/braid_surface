@@ -22,6 +22,12 @@ function [braid_val,braid_ind,braid_conc] = fkppbraidsurface(L,u0,n,TIME,dif)
 %
 % Copyright End
 % -----------------------------------------------------------------
+% Function to produce sequence of braids of a chosen connectome graph;
+% INPUT  : L, Laplacian matrix; u0, initial value vector; n, size of graph; 
+%          TIME, a range of time; dif, defined dif range;
+% OUTPUT : braid_conc, computed arrival time of Braak regions; braid_val:
+% ordered computed arrival time of Braak regions; braid_ind, ordered
+% indexes of Braak regions;
 
 cf = pwd;
 datreg = readmatrix([cf,'\brainregion.xlsx'],...

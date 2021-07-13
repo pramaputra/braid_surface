@@ -22,6 +22,9 @@ function braid_conc = timerecordinterp(ts,sty)
 %
 % Copyright End
 % -----------------------------------------------------------------
+% This function computes time interpolation of a given biomarker threshold;
+% INPUT  : ts, time vector; sty, biomarker vector;
+% OUTPUT : braid_conc, computed arrival time of Braak regions;
 
 level = [0.01:0.01:0.99];
     for j = 1:length(level)
