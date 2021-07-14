@@ -8,11 +8,12 @@ Tested with:
 1. MATLAB R2015a
 2. MATLAB R2020a
 
-To run Braid Surface generator (main_fkpp.m or main_damage.m):
+To run Braid Surface generator (main_fkpp.m, main_damage.m, main_fkpp_fsl, or main_damage_fsl):
 1. Make sure user puts all MATLAB scripts, brainregion.xlsx, and connectome_library folder
 within the same directory.
-2. Open main_fkpp.m to generate seed stageing braid surface and main_damage to generate
-damage stageing braid surface.
+2. Open main_fkpp.m (main_fkpp_fsl.m) to generate seed stageing braid surface and main_damage.m 
+(main_damage_fsl.m) to generate damage stageing braid surface.
+PS: Main scripts named fsl use FSL connectome instead of PIT connectome.
 3. Make sure user selects and inputs correct input data, i.e. csize for connectome size
 selection, csource for type of connectome, cweight for weight selection.
 4. Please be reminded that user needs to define TIME range that shows full Braak regions evolution 
