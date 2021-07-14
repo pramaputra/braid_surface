@@ -1,4 +1,4 @@
-function [L,u0,n] = connectomelaplacian(csize,csource,cweight)
+function [L,u0,n] = connectomelaplacian(csize,cweight)
 %  ---------------------------------------------------
 %
 % Oxford Mathematical Brain Modelling Group
@@ -55,7 +55,7 @@ switch cweight
 end
 
 cf = pwd;
-filenameoffice = [cf,'\connectome_library\Scale-',num2str(csize(1)),'\connectome-',num2str(csource),'\',weight,'.csv'];
+filenameoffice = [cf,'\Connectomes\PIT-deterministic\Scale-',num2str(csize(1)),'\',weight,'.csv'];
 M = csvread(filenameoffice);
 
 k = sum(M'); n = csize(2);
