@@ -33,29 +33,19 @@ close all; clear all; clc;
 % -----------------------------------------------------------------
 % Select connectome size
 % -----------------------------------------------------------------
-% Scale 500 has 1017 nodes;
+% Scale 500 has 1015 nodes;
+% Scale 250 has 463 nodes;
+% Scale 125 has 234 nodes;
+% Scale 60 has 129 nodes;
 % Scale 33 has 83 nodes;
 % Activate csize by deleting % symbol or activate comment;
 % Deactivate csize by typing % symbol or deactivate comment;
 %
-csize = [500 1017];
+csize = [500 1015];
+% csize = [250 463];
+% csize = [125 234];
+% csize = [60 129];
 % csize = [33 83];
-%
-% -----------------------------------------------------------------
-% Select connectome source
-% -----------------------------------------------------------------
-% The FSL connectomes of different thresholding methods are provided in the
-% github. We use:
-% DF    : Disparity Filtering; 
-% DS    : Doubly Stochastic Disparity Filtering;
-% HSS   : High-Salience Skeletonization;
-% NAIVE : Naive Cutoff;
-% NC    : Noise-Corrected Backboning;
-% Example: type csource = 'DF'; cthreshold = 0.2; when using Disparity Filtering  
-% threshold 0.2 connectome;
-%
-csource = 'DF';
-cthreshold = 0.2;
 %
 % -----------------------------------------------------------------
 % Select type of weight
@@ -77,7 +67,7 @@ cweight = 1;
 % case-1: define varying diffusion coefficient and fixed damage coefficient;
 % -------
 %
-% dif = exp([-10:0.1:0]); %acivate this when needed;
+% dif = exp([-5:0.1:0]); %acivate this when needed;
 % dam = exp(0); %acivate this when needed;
 %
 % -------
@@ -85,7 +75,7 @@ cweight = 1;
 % -------
 %
 dif = exp(0); %acivate this when needed;
-dam = exp([-10:0.1:0]); %acivate this when needed;
+dam = exp([-5:0.1:0]); %acivate this when needed;
 %
 % -----------------------------------------------------------------
 % Define range of time of evolution
@@ -106,7 +96,7 @@ TIME = [0,1000];
 % INPUT  : csize, connectome size; csource, connectome source; cweight, connectome weight;
 % OUTPUT : L, Laplacian matrix; u0, initial value vector; n, size of graph;
 %
-[L,u0,n] = connectomelaplacian_fsl(csize,csource,cthreshold,cweight);
+[L,u0,n] = connectomelaplacian(csize,cweight);
 % 
 % -----------------------------------------------------------------
 % Evolution plot of the smallest diffusion/damage coefficient value

@@ -37,12 +37,18 @@ csize = [500 1017];
 % -----------------------------------------------------------------
 % Select connectome source
 % -----------------------------------------------------------------
-% 3: DF 0.2; 4: DF 0.8; 5: DS 0.01; 6: HSS 0.0005; 7: HSS 0.1;
-% 8: NAIVE 0.001; 9: NAIVE 0.005; 10: NAIVE: 0.01; 
-% 11: NC 1.28; 12: NC 2.32: 2.32;
-% Example: type csource = 3 when using DF 0.2 connectome;
+% The FSL connectomes of different thresholding methods are provided in the
+% github. We use:
+% DF    : Disparity Filtering; 
+% DS    : Doubly Stochastic Disparity Filtering;
+% HSS   : High-Salience Skeletonization;
+% NAIVE : Naive Cutoff;
+% NC    : Noise-Corrected Backboning;
+% Example: type csource = 'DF'; cthreshold = 0.2; when using Disparity Filtering  
+% threshold 0.2 connectome;
 %
-csource = 3;
+csource = 'DF';
+cthreshold = 0.2;
 %
 % -----------------------------------------------------------------
 % Select type of weight
@@ -81,7 +87,7 @@ TIME = [0,150];
 % nodes with total initial concentration 5e-3, and zero elsewhere;
 % INPUT  : csize, connectome size; csource, connectome source; cweight, connectome weight;
 % OUTPUT : L, Laplacian matrix; u0, initial value vector; n, size of graph;
-[L,u0,n] = connectomelaplacian_fsl(csize,csource,cweight);
+[L,u0,n] = connectomelaplacian_fsl(csize,csource,cthreshold,cweight);
 % 
 % -----------------------------------------------------------------
 % FKPP plot of the smallest diffusion coefficient value
