@@ -46,7 +46,7 @@ csize = [500 1015];
 % 1: diffusive weight (number of fibers per squared length of fibers);
 % 2: ballistic weight (number of fibers per length of fibers);
 % 3: length-free weight (length of fibers);
-% Example: type cweight = 1 when using 20-k diffusive weighting scheme;
+% Example: type cweight = 1 when using diffusive weighting scheme;
 %
 cweight = 1;
 %
