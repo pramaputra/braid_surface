@@ -9,7 +9,7 @@ Tested with:
 2. MATLAB R2020a
 
 To run Braid Surface generator (main_fkpp.m, main_damage.m, main_fkpp_fsl, or main_damage_fsl):
-1. Make sure user puts all MATLAB scripts, brainregion.xlsx, and connectome_library folder
+1. Make sure user puts all MATLAB scripts, brainregion.xlsx, and Connectomes folder
 within the same directory.
 2. Open main_fkpp.m (main_fkpp_fsl.m) to generate seed stageing braid surface and main_damage.m 
 (main_damage_fsl.m) to generate damage stageing braid surface.
